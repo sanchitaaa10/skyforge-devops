@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS factory (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS machine (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    status VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS alert (
+    id SERIAL PRIMARY KEY,
+    message VARCHAR(255)
+);
