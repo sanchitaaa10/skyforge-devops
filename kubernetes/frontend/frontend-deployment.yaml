@@ -26,3 +26,6 @@ spec:
 
         ports:
         - containerPort: 5173
+
+
+        
