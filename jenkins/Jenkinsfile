@@ -3,9 +3,10 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
+        stage('Verify Workspace') {
             steps {
-                git 'https://github.com/sanchitaaa10/skyforge-devops.git'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
 
@@ -26,6 +27,6 @@ pipeline {
                 sh 'docker images'
             }
         }
-    }
 
+    }
 }
