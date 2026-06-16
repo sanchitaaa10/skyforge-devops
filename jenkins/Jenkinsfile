@@ -27,5 +27,13 @@ pipeline {
                 echo 'SkyForge CI Pipeline Executed Successfully'
             }
         }
+        stage('Deploy to Kubernetes') {
+    steps {
+        sh 'kubectl apply -f kubernetes/backend/backend-deployment.yaml'
+        sh 'kubectl apply -f kubernetes/backend/backend-service.yaml'
+        sh 'kubectl apply -f kubernetes/frontend/frontend-deployment.yaml'
+        sh 'kubectl apply -f kubernetes/frontend/frontend-service.yaml'
+    }
+}
     }
 }
