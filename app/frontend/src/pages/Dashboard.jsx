@@ -10,7 +10,7 @@ function Dashboard() {
   });
 
   useEffect(() => {
-    fetch("http://backend-service:5000/dashboard")
+    fetch("http://127.0.0.1:54714/dashboard")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
