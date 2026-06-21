@@ -4,7 +4,7 @@ function Factories() {
   const [factories, setFactories] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:57315/factories")
+    fetch("http://backend-service:5001/factories")
       .then((res) => res.json())
       .then((data) => setFactories(data));
   }, []);

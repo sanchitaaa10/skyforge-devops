@@ -6,7 +6,7 @@ function Dashboard() {
   const API = import.meta.env.VITE_API_URL;
 
 useEffect(() => {
-  fetch("http://127.0.0.1:57315/dashboard")
+  fetch("http://backend-service:5001/dashboard")
     .then((res) => res.json())
     .then((data) => setData(data));
 }, []);

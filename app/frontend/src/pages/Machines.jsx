@@ -4,7 +4,7 @@ function Machines() {
   const [machines, setMachines] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:57315/machines")
+    fetch("http://backend-service:5001/machines")
       .then((res) => res.json())
       .then((data) => setMachines(data));
   }, []);
