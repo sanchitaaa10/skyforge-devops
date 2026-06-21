@@ -20,7 +20,7 @@ spec:
       containers:
       - name: backend
 
-        image: skyforge-backend:v1
+        image: skyforge-backend:v2
 
         imagePullPolicy: Never
 
