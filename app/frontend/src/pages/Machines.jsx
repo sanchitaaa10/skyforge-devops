@@ -4,7 +4,7 @@ function Machines() {
   const [machines, setMachines] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/machines")
+    fetch("http://127.0.0.1:57315/machines")
       .then((res) => res.json())
       .then((data) => setMachines(data));
   }, []);

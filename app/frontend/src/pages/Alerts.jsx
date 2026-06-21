@@ -4,7 +4,7 @@ function Alerts() {
   const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/alerts")
+    fetch("http://127.0.0.1:57315/alerts")
       .then((res) => res.json())
       .then((data) => setAlerts(data));
   }, []);

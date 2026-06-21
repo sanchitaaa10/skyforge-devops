@@ -3,17 +3,13 @@ import Header from "../components/Header";
 import "../components/Header.css";
 
 function Dashboard() {
-  const [data, setData] = useState({
-    factories: 0,
-    machines: 0,
-    alerts: 0,
-  });
+  const API = import.meta.env.VITE_API_URL;
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:54714/dashboard")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+useEffect(() => {
+  fetch("http://127.0.0.1:57315/dashboard")
+    .then((res) => res.json())
+    .then((data) => setData(data));
+}, []);
 
   return (
     <>
