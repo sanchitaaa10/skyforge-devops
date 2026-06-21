@@ -5,11 +5,36 @@ import "../components/Header.css";
 function Dashboard() {
   const API = import.meta.env.VITE_API_URL;
 
-useEffect(() => {
-  fetch("http://backend-service:5001/dashboard")
-    .then((res) => res.json())
-    .then((data) => setData(data));
-}, []);
+console.log(import.meta.env);
+  const [data, setData] = useState({
+    factories: 0,
+    machines: 0,
+    alerts: 0,
+  });
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${API}/dashboard`)
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Dashboard API Error:", error);
+        setLoading(false);
+      });
+  }, [API]);
+
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <h2>Loading Dashboard...</h2>
+      </>
+    );
+  }
 
   return (
     <>
@@ -25,7 +50,7 @@ useEffect(() => {
         </div>
 
         <div className="card">
-          <h3>⚙ Machines</h3>
+          <h3>⚙️ Machines</h3>
           <p>{data.machines}</p>
           <small>Operational Units</small>
         </div>

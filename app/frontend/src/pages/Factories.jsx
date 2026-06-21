@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 function Factories() {
+  const API = import.meta.env.VITE_API_URL;
   const [factories, setFactories] = useState([]);
 
   useEffect(() => {
-    fetch("http://backend-service:5001/factories")
+    fetch(`${API}/factories`)
       .then((res) => res.json())
       .then((data) => setFactories(data));
   }, []);

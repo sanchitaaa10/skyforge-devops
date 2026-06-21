@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 function Alerts() {
   const [alerts, setAlerts] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch("http://backend-service:5001/alerts")
+    fetch(`${API}/alerts`)
       .then((res) => res.json())
       .then((data) => setAlerts(data));
   }, []);

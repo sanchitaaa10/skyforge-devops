@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 function Machines() {
   const [machines, setMachines] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch("http://backend-service:5001/machines")
+    fetch(`${API}/machines`)
       .then((res) => res.json())
       .then((data) => setMachines(data));
   }, []);
